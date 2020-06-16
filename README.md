@@ -1,5 +1,8 @@
 # Component Generator 
 
+[source code](http://vcs.tiddev.com/scm/~ahmadi.k/reactseam-component-generator.git) 
+
+
 ## execute command in terminal 
 
 before execute the command make sure to add scoped registry in your .npmrc file:
@@ -15,8 +18,3 @@ in terminal run :
 npx @ReactSeam/component-generator
 ``
 
-## vcs source code url 
-
-`
-http://vcs.tiddev.com/scm/~ahmadi.k/component-generator.git
-`
