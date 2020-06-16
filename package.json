@@ -1,6 +1,6 @@
 {
   "name": "@ReactSeam/component-generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Component Generator",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "path": "^0.12.7",
     "plop": "^2.7.1"
   },
-  "publishConfig":{
-    "registry":"http://192.168.100.192:4873"
+  "publishConfig": {
+    "registry": "http://192.168.100.192:4873"
   }
 }
