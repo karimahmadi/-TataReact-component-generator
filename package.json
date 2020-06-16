@@ -23,6 +23,6 @@
     "plop": "^2.7.1"
   },
   "publishConfig":{
-    "@ahmadi:registry":"http://192.168.100.192:4873"
+    "registry":"http://192.168.100.192:4873"
   }
 }
