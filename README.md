@@ -14,3 +14,9 @@ in terminal run :
 ``
 npx @ReactSeam/component-generator
 ``
+
+## vcs source code url 
+
+`
+http://vcs.tiddev.com/scm/~ahmadi.k/component-generator.git
+`
