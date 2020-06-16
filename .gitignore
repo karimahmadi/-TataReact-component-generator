@@ -1,0 +1,11 @@
+node_modules
+.idea
+*.log
+temp
+.eslintcache
+dist
+.docz
+*.psd
+yarn.lock
+yarn-error.log
+package-lock.json
