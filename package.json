@@ -1,6 +1,6 @@
 {
   "name": "@ReactSeam/component-generator",
-  "version": "0.0.6",
+  "version": "0.0.5",
   "description": "Component Generator",
   "main": "index.js",
   "scripts": {

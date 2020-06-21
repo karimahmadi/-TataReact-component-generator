@@ -1,23 +1,5 @@
 const path = require('path');
-const fs = require('fs');
 module.exports = function (plop) {
-    // create your generators here
-    plop.setActionType('createDirectory', function (answers, config, plop) {
-        // do something
-        try {
-            const dir = config.dir;
-            if(dir) {
-                if (!fs.existsSync(dir)) {
-                    fs.mkdirSync(dir);
-                }
-            }else{
-                throw new Error('directory not defined');
-            }
-        }catch(error){
-            throw error;
-        }
-    });
-
     plop.setGenerator('CreateComponent', {
         description: 'this is a skeleton plopfile',
         prompts: [{
@@ -25,22 +7,21 @@ module.exports = function (plop) {
             name: 'name',
             message: 'Please enter a name for your component:'
         }],
-        actions: [{
-            type:'createDirectory',
-            dir:path.join(process.cwd(), '{{name}}'),
-        },{
+        actions: [
+
+        {
             type: 'add',
-            path: path.join(process.cwd(),'{{name}}','src/{{name}}.js'),
+            path: path.join(process.cwd(),'{{name}}','/src/{{name}}.js'),
             templateFile: 'templates/component.hbs'
         },
         {
             type: 'add',
-            path: path.join(process.cwd(),'{{name}}','src/index.js'),
+            path: path.join(process.cwd(),'{{name}}','/src/index.js'),
             templateFile: 'templates/index.hbs'
         },
         {
             type: 'add',
-            path: path.join(process.cwd(),'{{name}}','src/stories.js'),
+            path: path.join(process.cwd(),'{{name}}','/src/stories.js'),
             templateFile: 'templates/stories.hbs'
         },
         {
@@ -54,6 +35,11 @@ module.exports = function (plop) {
             templateFile: 'templates/package.hbs'
         },
         {
+            type: 'add',
+            path: 'source/webpack.config.js',
+            templateFile: 'templates/webpack.config.hbs'
+        },
+        {
             type: 'addMany',
             destination: path.join(process.cwd(), '{{name}}'),
             base:'source',
@@ -61,6 +47,7 @@ module.exports = function (plop) {
                 dot:true
             },
             templateFiles: 'source/**/*'
-        }]
+        }
+        ]
     });
 };
