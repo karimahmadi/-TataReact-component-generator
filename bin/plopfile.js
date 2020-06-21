@@ -30,17 +30,17 @@ module.exports = function (plop) {
             dir:path.join(process.cwd(), '{{name}}'),
         },{
             type: 'add',
-            path: path.join(process.cwd(),'src/{{name}}.js'),
+            path: path.join(process.cwd(),'{{name}}','src/{{name}}.js'),
             templateFile: 'templates/component.hbs'
         },
         {
             type: 'add',
-            path: path.join(process.cwd(),'src/index.js'),
+            path: path.join(process.cwd(),'{{name}}','src/index.js'),
             templateFile: 'templates/index.hbs'
         },
         {
             type: 'add',
-            path: path.join(process.cwd(),'src/stories.js'),
+            path: path.join(process.cwd(),'{{name}}','src/stories.js'),
             templateFile: 'templates/stories.hbs'
         },
         {
