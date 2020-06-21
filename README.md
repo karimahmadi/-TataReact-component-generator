@@ -1,6 +1,6 @@
 # Component Generator 
 
-[source code](http://vcs.tiddev.com/scm/~ahmadi.k/reactseam-component-generator.git) 
+[bitbucket source code](http://vcs.tiddev.com/scm/~ahmadi.k/reactseam-component-generator.git) 
 
 
 ## execute command in terminal 
