@@ -1,6 +1,6 @@
 {
   "name": "@ReactSeam/component-generator",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Component Generator",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "plop": "plop"
   },
   "bin": {
-    "create-component": "bin/cc.js"
+    "cc": "bin/cc.js"
   },
   "author": "Karim Ahmadi",
   "license": "ISC",
