@@ -31,6 +31,11 @@ module.exports = function (plop) {
         },
         {
             type: 'add',
+            path: 'source/.gitignore',
+            templateFile: 'templates/gitignore.hbs'
+        },
+        {
+            type: 'add',
             path: 'source/package.json',
             templateFile: 'templates/package.hbs'
         },
