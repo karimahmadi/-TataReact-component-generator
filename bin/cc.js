@@ -4,6 +4,36 @@ const path = require('path');
 const args = process.argv.slice(2);
 const {Plop, run} = require('plop');
 const argv = require('minimist')(args);
+const CFonts = require('cfonts');
+
+CFonts.say('React-Seam |--------------', {
+    font: 'tiny',              // define the font face
+    align: 'left',              // define text alignment
+    colors: ['system'],         // define all colors
+    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+    letterSpacing: 1,           // define letter spacing
+    lineHeight: 0.0,              // define the line height
+    space: false,                // define if the output text should have empty lines on top and on the bottom
+    maxLength: '0',             // define how many character can be on one line
+    gradient: false,            // define your two gradient colors
+    independentGradient: false, // define if you want to recalculate the gradient for each new line
+    transitionGradient: false,  // define if this is a transition between colors directly
+    env: 'node'                 // define the environment CFonts is being executed in
+});
+CFonts.say('Component Generator', {
+    font: 'simple',              // define the font face
+    align: 'left',              // define text alignment
+    colors: ['system'],         // define all colors
+    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+    letterSpacing: 1,           // define letter spacing
+    lineHeight: 0.0,              // define the line height
+    space: true,                // define if the output text should have empty lines on top and on the bottom
+    maxLength: '0',             // define how many character can be on one line
+    gradient: false,            // define your two gradient colors
+    independentGradient: false, // define if you want to recalculate the gradient for each new line
+    transitionGradient: false,  // define if this is a transition between colors directly
+    env: 'node'                 // define the environment CFonts is being executed in
+});
 
 Plop.launch({
     cwd: argv.cwd,
@@ -17,57 +47,3 @@ Plop.launch({
 
 
 
-
-// const chalk = require('chalk');
-// const clear = require('clear');
-// const figlet = require('figlet');
-// var CLI = require('clui');
-// const files = require('./lib/files');
-// const inquirer  = require('./lib/inquirer');
-//
-// clear();
-//
-// console.log(
-//     chalk.cyan(
-//         figlet.textSync('Create Component', { horizontalLayout: 'full' })
-//     )
-// );
-
-
-// var Spinner = CLI.Spinner;
-//
-// var countdown = new Spinner('Exiting in 10 seconds...  ', ['⣾','⣽','⣻','⢿','⡿','⣟','⣯','⣷']);
-//
-// countdown.start();
-//
-// var number = 10;
-// setInterval(function () {
-//     number--;
-//     countdown.message('Exiting in ' + number + ' seconds...  ');
-//     if (number === 0) {
-//         // process.stdout.write('\n');
-//         // process.exit(0);
-//         countdown.stop();
-//     }
-// }, 1000);
-
-// const run = async () => {
-//     const props = await inquirer.askComponentProps();
-//     console.log(props);
-//     // console.log('test log');
-// };
-//
-// run();
-
-
-
-//1. create folder with component name
-//2.copy files from bin/src to new folder
-//3.replace template with component name and description
-//--package.json
-//--src/index.js
-//--src/stories.js
-//--
-
-
-// console.log('test log');
