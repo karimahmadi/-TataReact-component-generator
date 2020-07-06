@@ -3,7 +3,7 @@
 [bitbucket source code](http://vcs.tiddev.com/scm/~ahmadi.k/reactseam-component-generator.git) 
 
 
-## execute command in terminal 
+## Install and Usage
 
 before execute the command make sure to add scoped registry in your .npmrc file:
 
@@ -18,39 +18,20 @@ in terminal run :
 npx @ReactSeam/component-generator
 ``
 
-## change applied to version 0.2.0
-##1. remove storybook
-- delete .storybook folder
-- delete dependency @storybook/* from package.json
-- delete storybook scripts from package.json 
-- delete stories.js file from src folder  
- 
-##2. create lib folder
-- create lib folder in src folder 
-- move component js file to lib folder and rename it to index.js 
+answer the questions to generate component boilerplate project 
 
- 
-##3. add example / demo for development 
+# Change log
+## [Unreleased] 
+
+## [0.2.0] - 1399/04/15
+
+### Added
+- create lib folder in src folder
 - install webpack-dev-server  
 `
 yarn add webpack-dev-server
 `
-- open src\index.js file and delete all source code
-- copy below source code into index.js file 
-```
-
-import React from 'react';
-import { render } from "react-dom";
-import your-combo from "./lib";
-
-const App = () => (
-	<your-component  {...props of your component} />
-);
-
-render(<App />, document.getElementById("root"));
-
-```  
-- create index.html file in root 
+- create index.html file in root of project with content :
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -65,8 +46,29 @@ render(<App />, document.getElementById("root"));
 </html>
 
 ```
+- add start script in package.json in "scripts" part :
+```
+"start": "webpack-dev-server --open",
+```
+- added .reactseamrc config file for featuer tools like migration
 
-##4. change webpack.config.js
+### Changed
+- move component js file to lib folder and rename it to index.js
+- changed source of src\index.js file to :
+```
+
+import React from 'react';
+import { render } from "react-dom";
+import your-combo from "./lib";
+
+const App = () => (
+	<your-component  {...props of your component} />
+);
+
+render(<App />, document.getElementById("root"));
+
+```
+- changed webpack.config.js to :
 ```
 const path = require('path');
 
@@ -124,18 +126,9 @@ module.exports = (env, argv) => {
 };
 
 ```
- 
-##5. add start script
-in package.json add start in "scripts" part :
-```
-"start": "webpack-dev-server --open",
-```
 
-for development 
-```angular2html
-yarn start
-```
-for production 
-```angular2html
-yarn build
-```
+### Removed
+- delete .storybook folder
+- delete dependency @storybook/* from package.json
+- delete storybook scripts from package.json 
+- delete stories.js file from src folder  
