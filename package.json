@@ -48,11 +48,11 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "src/**/*.js": [
       "eslint --cache --ignore-path .gitignore --fix",
       "git add --force"
     ],
-    "*.json": [
+    "src/**/*.json": [
       "prettier --write",
       "git add --force"
     ]
