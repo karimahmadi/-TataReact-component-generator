@@ -1,12 +1,14 @@
 #! /usr/bin/env node
 
-const path = require('path');
-const args = process.argv.slice(2);
-const { Plop, run } = require('plop');
-const argv = require('minimist')(args);
-const CFonts = require('cfonts');
+import path from 'path';
+import { Plop, run } from 'plop';
+import CFonts from 'cfonts';
+import minimist from 'minimist';
 
-CFonts.say('React-Seam |--------------', {
+const args = process.argv.slice(2);
+const argv = minimist(args);
+
+CFonts.say('Tata-React |--------------', {
   font: 'tiny', // define the font face
   align: 'left', // define text alignment
   colors: ['system'], // define all colors
