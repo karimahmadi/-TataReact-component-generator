@@ -57,7 +57,7 @@ module.exports = function(plop) {
         globOptions: {
           dot: true,
         },
-        templateFiles: 'source/**',
+        templateFiles: "'source/**",
       },
     ],
   });
