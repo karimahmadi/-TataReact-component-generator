@@ -1,8 +1,8 @@
 {
   "name": "@tatareact/component-generator",
-  "version": "0.2.0",
+  "version": "0.3.7",
   "description": "Component Generator",
-  "main": "index.js",
+  "main":"component-generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "npm run build:clean",

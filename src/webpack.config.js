@@ -2,6 +2,7 @@
 // matter which part of your file system your library lives in
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 // Webpack is just a bunch of keys on module.exports!
 const config = {
@@ -9,7 +10,10 @@ const config = {
   target: 'node',
   // This is where our app starts. This is why we have done all this importing
   // and exporting, to get to here
-  entry: './src/index.js',
+  entry: {
+    'component-generator': './src/index.js',
+    plopfile: './src/plopfile.js',
+  },
   // module (I know it's a bit weird to have module.exports.module) is where we
   // define all the rules for how webpack will deal with thing.
   module: {
@@ -73,7 +77,7 @@ const config = {
     // You can do fun things here like use the [hash] keyword to generate unique
     // filenames, but for this purpose rinse.js is fine. This file and path will
     // be what you put in package.json's "main" field
-    filename: 'component-generator.js',
+    filename: '[name].js',
     // This field determines how things are importable when installed from other
     // sources. UMD may not be correct now and there is an open issue to fix this,
     // but until then, more reading can be found here:
@@ -90,12 +94,13 @@ const config = {
         concurrency: 100,
       },
     }),
+    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
   ],
 };
 
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
-    config.mode = 'production';
+    config.mode = 'development';
     // config.entry = './src/lib/index.js';
     config.externals = ['path', 'inquirer', 'minimist', 'plop'];
     return config;
